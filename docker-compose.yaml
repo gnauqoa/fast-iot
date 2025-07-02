@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgis/postgis:17-3.4
+    ports:
+      - ${DATABASE_PORT}:5432
+    volumes:
+      - fast-iot-ps:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+  mosquitto:
+    image: quanglng2022/mosquitto-go-auth:latest-arm64
+    ports:
+      - "${MQTT_PORT}:1883"
+    volumes:
+      - mosquitto_data:/var/lib/mosquitto
+      - mosquitto_log:/var/log/mosquitto
+    environment:
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+    depends_on:
+      - postgres
+    restart: always
+  redis:
+    image: redis:7-alpine
+    ports:
+      - ${REDIS_PORT}:6379
+  mongo:
+    image: mongo:6
+    ports:
+      - ${DOCUMENT_PORT}:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DOCUMENT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DOCUMENT_PASSWORD}
+    volumes:
+      - fast-iot-mongo:/data/db
+  api:
+    build:
+      context: ./fast-iot-be
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    depends_on:
+      - postgres
+      - redis
+      - mongo
+      - mosquitto
+    volumes:
+      - fast-iot-api:/app
+  admin:
+    build:
+      context: ./fast-iot-fe
+      dockerfile: Dockerfile
+    ports:
+      - ${VITE_APP_PORT}:${VITE_APP_PORT}
+    depends_on:
+      - api
+volumes:
+  fast-iot-ps:
+  mosquitto_data:
+  mosquitto_log:
+  fast-iot-mongo:
+  fast-iot-api:
+
