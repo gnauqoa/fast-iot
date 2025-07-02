@@ -33,6 +33,7 @@
 <img src="https://img.shields.io/badge/Docker-2496ED.svg?style=flat-square&logo=Docker&logoColor=white" alt="Docker">
 <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat-square&logo=TypeScript&logoColor=white" alt="TypeScript">
 <img src="https://img.shields.io/badge/MQTT-660066.svg?style=flat-square&logo=MQTT&logoColor=white" alt="MQTT">
+<img src="https://img.shields.io/badge/Firebase-FFCA28.svg?style=flat-square&logo=firebase&logoColor=black" alt="Firebase">
 <img src="https://img.shields.io/badge/Refine-24292F.svg?style=flat-square&logo=Refine&logoColor=white" alt="Refine" />
 <img src="https://img.shields.io/badge/ESP32-000000.svg?style=flat-square&logo=espressif&logoColor=white" alt="ESP32">
 <img src="https://img.shields.io/badge/ESP8266-002F6C.svg?style=flat-square&logo=wifi&logoColor=white" alt="ESP8266">
@@ -111,7 +112,7 @@ Each app has its own `env-example`. Copy them like this:
 cp env-example .env
 ```
 
-Then edit `.env` in each folder to match your development environment.
+Then edit `.env` in to match your development environment.
 
 ---
 
