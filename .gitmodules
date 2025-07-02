@@ -1,9 +1,12 @@
 [submodule "fast-iot-be"]
 	path = fast-iot-be
 	url = https://github.com/gnauqoa/fast-iot-be.git
+	branch = main
 [submodule "fast-iot-fe"]
 	path = fast-iot-fe
 	url = https://github.com/gnauqoa/fast-iot-fe.git
+	branch = main
 [submodule "fast-iot-pio"]
 	path = fast-iot-pio
 	url = https://github.com/gnauqoa/fast-iot-pio.git
+	branch = main
