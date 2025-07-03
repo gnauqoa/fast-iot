@@ -117,19 +117,24 @@ cd fast-iot
 Each app has its own `env-example`. Copy them like this:
 
 ```bash
-cp env-example .env
+cp ./fast-iot-be/env-docker-example ./fast-iot-be/.env
+cp ./fast-iot-fe/env-example ./fast-iot-fe/.env
 ```
-
-Then edit `.env` in to match your development environment.
 
 ---
 
 ### 3. Run all services
 
-Make sure Docker is running, then:
-
+Then edit `.env` of each repo if need to match your development environment.
+  
 ```bash
+# start backend
+cd ./fast-iot-be
 docker compose up --build -d
+
+# start frontend
+cd ../fast-iot-fe
+npm run docker:start
 ```
 
 This will spin up:

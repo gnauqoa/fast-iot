@@ -197,19 +197,24 @@ cd fast-iot
 Each app has its own `env-example`. Copy them like this:
 
 ```bash
-cp env-example .env
+cp ./fast-iot-be/env-docker-example ./fast-iot-be/.env
+cp ./fast-iot-fe/env-example ./fast-iot-fe/.env
 ```
-
-Then edit `.env` in to match your development environment.
 
 ---
 
 ### 3. Run all services
 
-Make sure Docker is running, then:
-
+Then edit `.env` of each repo if need to match your development environment.
+  
 ```bash
+# start backend
+cd ./fast-iot-be
 docker compose up --build -d
+
+# start frontend
+cd ../fast-iot-fe
+npm run docker:start
 ```
 
 This will spin up:
@@ -220,6 +225,7 @@ This will spin up:
 - 🧪 Swagger UI for dev mode at [`http://localhost:3000/docs`](http://localhost:3000/docs)
 
 You can quickly connect your hardware using an ESP32 or ESP8266 board with our custom [PlatformIO/Arduino library](https://github.com/gnauqoa/fast-iot-pio.git) for PlatformIO and Arduino IDE
+
 ## Firewall Configuration
 
 Configure UFW (Uncomplicated Firewall) to secure your VPS:
