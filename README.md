@@ -86,8 +86,6 @@ fast-iot/
 ├── fast-iot-be/     ← Submodule (backend)
 ├── fast-iot-fe/     ← Submodule (frontend)
 ├── fast-iot-pio/    ← Submodule (esp library)
-├── docker-compose.yml
-├── env-example
 ├── LICENSE
 ├── README.md
 └── SETUP-VPS.md
