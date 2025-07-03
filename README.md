@@ -1,44 +1,33 @@
-<div id="top">
-
-<!-- HEADER STYLE: CONSOLE -->
 <div align="center">
 
-<h1 align="center">
-  <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/gnauqoa/fast-iot-fe/c8f4e737913bd522e44882d34bd66b855ba340f1/public/fast-iot-no-text.svg"alt="Markdownify" width="200"></a>
-  <br>Fast IoT
-  <br>
+<h1>
+  <img src="https://raw.githubusercontent.com/gnauqoa/fast-iot-fe/c8f4e737913bd522e44882d34bd66b855ba340f1/public/fast-iot-no-text.svg" width="150" alt="FastIoT logo" /><br />
+  Fast IoT
 </h1>
 
-<h4 align="center">A framework to quick start IoT project.</h4>
-</div>
+<h4>A full-stack framework to fast-track your IoT development.</h4>
 
+<!-- Core Badges -->
+<p align="center">
+  <!-- Frontend -->
+  <img src="https://img.shields.io/badge/Refine-242938.svg?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMi42NCA2LjI2TDYuMjYgMTIuNjRsMi4xMiAyLjEyTDE0Ljc2IDguMzh2Ni4xMmgyVjYuMjZoLTIuMTJ6Ii8+PC9zdmc+" alt="Refine" />
+  <img src="https://img.shields.io/badge/NestJS-E0234E.svg?style=flat-square&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/ESP32%2F8266-3C3C3C.svg?style=flat-square&logo=espressif&logoColor=white" alt="ESP32/ESP8266" />
+  <img src="https://img.shields.io/badge/PlatformIO-FF6600.svg?style=flat-square&logo=platformio&logoColor=white" alt="PlatformIO" />
+</p>
+
+<!-- TOC -->
 <p align="center">
   <a href="#overview">Overview</a> •
   <a href="#purpose-and-vision">Purpose & Vision</a> •
-  <a href="#key-features">Key Features</a> •
+  <a href="#features">Features</a> •
   <a href="#repository-structure">Repository Structure</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#license">License</a>
 </p>
 
-<div align="center"> 
-
-
-<img src="https://img.shields.io/badge/Socket.io-010101.svg?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.io">
-<img src="https://img.shields.io/badge/npm-CB3837.svg?style=flat-square&logo=npm&logoColor=white" alt="npm">
-<img src="https://img.shields.io/badge/TypeORM-FE0803.svg?style=flat-square&logo=TypeORM&logoColor=white" alt="TypeORM">
-<img src="https://img.shields.io/badge/Redis-FF4438.svg?style=flat-square&logo=Redis&logoColor=white" alt="Redis">
-<img src="https://img.shields.io/badge/Mongoose-F04D35.svg?style=flat-square&logo=Mongoose&logoColor=white" alt="Mongoose">
-<img src="https://img.shields.io/badge/Docker-2496ED.svg?style=flat-square&logo=Docker&logoColor=white" alt="Docker">
-<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat-square&logo=TypeScript&logoColor=white" alt="TypeScript">
-<img src="https://img.shields.io/badge/MQTT-660066.svg?style=flat-square&logo=MQTT&logoColor=white" alt="MQTT">
-<img src="https://img.shields.io/badge/Firebase-FFCA28.svg?style=flat-square&logo=firebase&logoColor=black" alt="Firebase">
-<img src="https://img.shields.io/badge/Refine-24292F.svg?style=flat-square&logo=Refine&logoColor=white" alt="Refine" />
-<img src="https://img.shields.io/badge/ESP32-000000.svg?style=flat-square&logo=espressif&logoColor=white" alt="ESP32">
-<img src="https://img.shields.io/badge/ESP8266-002F6C.svg?style=flat-square&logo=wifi&logoColor=white" alt="ESP8266">
 </div>
-</div>
+
 
 ## Overview
 
@@ -58,18 +47,37 @@ This library provides ready-to-use MQTT and HTTP wrappers, token-based authentic
 - **Purpose**: FastIoT streamlines IoT project development by offering a comprehensive open-source platform that simplifies the integration of complex components such as servers, communication protocols, and admin interfaces. It enables developers, especially students and startups, to deploy complete IoT systems efficiently.
 - **Vision**: To become the go-to open-source platform for IoT development, empowering developers—from individuals to small businesses—to transform ideas into reality quickly and effectively. FastIoT integrates advanced technologies like edge AI, ensuring flexibility, security, and future-readiness.
 
-## Key Features
+## 🚀 Features
 
-- 🧠 Backend API:
-  Built with NestJS, provides REST & MQTT APIs with role-based authentication — ready for production.
+### 🧠 Robust Backend API (NestJS)
+- Built with **NestJS**, providing REST and MQTT APIs
+- Secure **role-based authentication** with JWT
+- Scalable architecture, production-ready out of the box
 
-- 🛠️ Admin Dashboard: Developed using Refine + Ant Design, enables real-time monitoring, device & user management — all in one place.
+### 🛠️ Intuitive Admin Dashboard (Refine)
+- Developed with **Refine** + **Ant Design**
+- Real-time device monitoring & user management
+- Built-in permissions and access control (RBAC)
 
-- 📡 Secure MQTT Server: Powered by Mosquitto, supports username/password authentication for secure, real-time communication with devices.
+### 📡 Secure MQTT Communication
+- Integrated **Mosquitto** broker for low-latency messaging
+- Supports **username/password authentication**
+- Device-specific topics and payload schemas
 
-- 🔌 ESP32/8266 Library Included: Lightweight, custom C++ library for PlatformIO and Arduino IDE, featuring WiFiManager & MQTT helpers for instant setup.
+### 🔌 Embedded Device SDK (ESP32/8266)
+- Custom lightweight C++ library using **PlatformIO** or **Arduino IDE**
+- Handles **WiFi setup**, **MQTT auth**, **reconnect logic**, and **OTA-ready**
+- Supports **channel-based callbacks** and JSON messaging
 
-- ⚡ Ultra-Fast Deployment: Get everything up and running in one command with Docker Compose — no manual config needed.
+### 📄 VPS Deployment Support
+- Includes [step-by-step guide](./SETUP-VPS.md) to deploy the entire stack on a VPS
+- Easily configure **custom domains** and **SSL certificates**
+- Designed for scalable and secure production hosting
+
+### ⚡ Instant Local Deployment (Docker)
+- One-command launch with **Docker Compose**
+- Includes backend, frontend, MQTT broker, Redis, and database services
+- Supports both **local development** and **cloud deployment**
 
 ## Repository Structure
 
@@ -137,7 +145,13 @@ You can quickly connect your hardware using an ESP32 or ESP8266 board with our c
 
 ### 4. Development Tips
 
-For deployment on a VPS with a custom domain, check out the step-by-step guide in [SETUP-VPS.md](./SETUP-VPS.md).
+- 🚀 **VPS Deployment**: To deploy the entire stack (backend, frontend, MQTT broker) on a VPS with a custom domain, follow the step-by-step instructions in [SETUP-VPS.md](./SETUP-VPS.md).
+
+- 🛠️ **Working with Submodules**: This project uses a monorepo structure with submodules for better separation and maintainability. Each submodule has its own `README.md` for setup and development instructions:
+  - [`fast-iot-be`](https://github.com/gnauqoa/fast-iot-be/blob/main/README.md) — NestJS backend with REST API and MQTT integration
+  - [`fast-iot-fe`](https://github.com/gnauqoa/fast-iot-fe/blob/main/README.md) — Refine-based admin dashboard for managing devices and users
+  - [`fast-iot-pio`](https://github.com/gnauqoa/fast-iot-pio/blob/main/README.md) — C++ client library for ESP32/ESP8266 devices using PlatformIO or Arduino IDE
+
 
 ## License
 

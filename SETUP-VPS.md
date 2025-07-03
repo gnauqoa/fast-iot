@@ -13,33 +13,15 @@
 <h4 align="center">A framework to quick start IoT project.</h4>
 </div>
 <p align="center">
-  <a href="#overview">Overview</a> •
-  <a href="#purpose-and-vision">Purpose & Vision</a> •
-  <a href="#key-features">Key Features</a> •
-  <a href="#repository-structure">Repository Structure</a> •
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#license">License</a>
+  <a href="#prerequisites">Prerequisites</a> •
+  <a href="#initial-vps-setup">Initial VPS Setup</a> •
+  <a href="#ssl-setup">SSL Setup</a> •
+  <a href="#application-deployment">Application Deployment</a> •
+  <a href="#firewall-configuration">Firewall Configuration</a> •
+  <a href="#troubleshooting">Troubleshooting</a> •
+  <a href="#security-notes">Security Notes</a> •
+  <a href="#additional-commands">Additional Commands</a>
 </p>
-<div align="center"> 
-<img src="https://img.shields.io/github/license/gnauqoa/fast-iot-be?style=flat-square&logo=opensourceinitiative&logoColor=white&color=8a2be2" alt="license">
-<img src="https://img.shields.io/github/last-commit/gnauqoa/fast-iot-be?style=flat-square&logo=git&logoColor=white&color=8a2be2" alt="last-commit">
-<img src="https://img.shields.io/github/languages/top/gnauqoa/fast-iot-be?style=flat-square&color=8a2be2" alt="repo-top-language">
-<img src="https://img.shields.io/github/languages/count/gnauqoa/fast-iot-be?style=flat-square&color=8a2be2" alt="repo-language-count">
-</div>
-
-<em>Built with the tools and technologies:</em>
-
-<img src="https://img.shields.io/badge/Socket.io-010101.svg?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.io">
-<img src="https://img.shields.io/badge/npm-CB3837.svg?style=flat-square&logo=npm&logoColor=white" alt="npm">
-<img src="https://img.shields.io/badge/TypeORM-FE0803.svg?style=flat-square&logo=TypeORM&logoColor=white" alt="TypeORM">
-<img src="https://img.shields.io/badge/Redis-FF4438.svg?style=flat-square&logo=Redis&logoColor=white" alt="Redis">
-<img src="https://img.shields.io/badge/Mongoose-F04D35.svg?style=flat-square&logo=Mongoose&logoColor=white" alt="Mongoose">
-<img src="https://img.shields.io/badge/Prettier-F7B93E.svg?style=flat-square&logo=Prettier&logoColor=black" alt="Prettier">
-<img src="https://img.shields.io/badge/.ENV-ECD53F.svg?style=flat-square&logo=dotenv&logoColor=black" alt=".ENV">
-<img src="https://img.shields.io/badge/Docker-2496ED.svg?style=flat-square&logo=Docker&logoColor=white" alt="Docker">
-<img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=flat-square&logo=TypeScript&logoColor=white" alt="TypeScript">
-<img src="https://img.shields.io/badge/MQTT-660066.svg?style=flat-square&logo=MQTT&logoColor=white" alt="MQTT">
-<img src="https://img.shields.io/badge/Refine-24292F.svg?style=flat-square&logo=Refine&logoColor=white" alt="Refine" />
 
 </div>
 
@@ -51,13 +33,6 @@ This guide will walk you through setting up a complete Node.js application on a 
 * Root or sudo access
 * Domain name (optional, for domain-based SSL)
 * Basic knowledge of Linux command line
-
-## Table of Contents
-
-1. [Initial VPS Setup](#initial-vps-setup)
-2. [SSL Setup - Option A: With Domain Name](#ssl-setup---option-a-with-domain-name)
-3. [Application Deployment](#application-deployment)
-4. [Firewall Configuration](#firewall-configuration)
 
 ## Initial VPS Setup
 
@@ -225,7 +200,7 @@ Each app has its own `env-example`. Copy them like this:
 cp env-example .env
 ```
 
-Then edit `.env` in each folder to match your development environment.
+Then edit `.env` in to match your development environment.
 
 ---
 
@@ -239,9 +214,12 @@ docker compose up --build -d
 
 This will spin up:
 
-- Backend API at [`http://localhost:3000`](http://localhost:3000)
-- Admin dashboard at [`http://localhost:4000`](http://localhost:4000)
+- 🌐 Backend API available at [`http://localhost:3000`](http://localhost:3000)
+- 🛠️ Admin Dashboard available at [`http://localhost:4000`](http://localhost:4000)
+- 📡 MQTT Broker for IoT device communication via port [`1883`](http://localhost:1883)
+- 🧪 Swagger UI for dev mode at [`http://localhost:3000/docs`](http://localhost:3000/docs)
 
+You can quickly connect your hardware using an ESP32 or ESP8266 board with our custom [PlatformIO/Arduino library](https://github.com/gnauqoa/fast-iot-pio.git) for PlatformIO and Arduino IDE
 ## Firewall Configuration
 
 Configure UFW (Uncomplicated Firewall) to secure your VPS:
