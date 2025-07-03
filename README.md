@@ -127,14 +127,18 @@ cp ./fast-iot-fe/env-example ./fast-iot-fe/.env
 
 Then edit `.env` of each repo if need to match your development environment.
   
+Start backend 
+
 ```bash
-# start backend
 cd ./fast-iot-be
 docker compose up --build -d
+```
 
-# start frontend
+Start frontend
+
+```bash
 cd ../fast-iot-fe
-npm run docker:start
+docker ps --filter 'publish=4000' -q | xargs -r docker rm -f && docker build -t fast-iot-fe . && docker run -d -p 4000:4000 fast-iot-fe
 ```
 
 This will spin up:
