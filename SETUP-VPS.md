@@ -192,14 +192,32 @@ cd fast-iot
 
 ---
 
-### 2. Create `.env` files from examples
+### 3. Run all services
 
-Each app has its own `env-example`. Copy them like this:
+Then edit `.env` of each repo if need to match your development environment.
+  
+Start backend 
 
 ```bash
-cp ./fast-iot-be/env-docker-example ./fast-iot-be/.env
-cp ./fast-iot-fe/env-example ./fast-iot-fe/.env
+cd ./fast-iot-be
+docker compose up --build -d
 ```
+
+Start frontend
+
+```bash
+cd ../fast-iot-fe
+docker ps --filter 'publish=4000' -q | xargs -r docker rm -f && docker build -t fast-iot-fe . && docker run -d -p 4000:4000 fast-iot-fe
+```
+
+This will spin up:
+
+- 🌐 Backend API available at [`http://localhost:3000`](http://localhost:3000)
+- 🛠️ Admin Dashboard available at [`http://localhost:4000`](http://localhost:4000)
+- 📡 MQTT Broker for IoT device communication via port [`1883`](http://localhost:1883)
+- 🧪 Swagger UI for dev mode at [`http://localhost:3000/docs`](http://localhost:3000/docs)
+
+You can quickly connect your hardware using an ESP32 or ESP8266 board with our custom [PlatformIO/Arduino library](https://github.com/gnauqoa/fast-iot-pio.git) for PlatformIO and Arduino IDE
 
 ---
 
